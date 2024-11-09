@@ -1,8 +1,12 @@
-# reed_reviewer_app (v0.2.3)
-Oboe reed development tracker. Records and stores the power spectrum
-of reeds as they are made. 
+<h1 align="center">
+  <img src="https://github.com/user-attachments/assets/ce84ed8b-91bb-4b58-9369-bf8d391d71d7" alt="Tabuteau cartoon" width="200">
+</h1>
 
-Under development with B. T. Fisher (oboe).
+
+Oboe reed development tracker. Records and stores the power spectrum
+of reeds as they are made. Under development with B. T. Fisher (oboe).
+
+# reed_reviewer_app (v0.2.3)
 
 **This is my first app with kivy/python. The README.md and source code serve as
 a personal kivy docs. I have solved a few tricky
@@ -36,6 +40,18 @@ From inside the package directory and activated environment:
 ```python
 (reed_reviewer)$ python entry_point.py
 ```
+
+#### Select A Reed
+
+<h1 align="center">
+<img width="600" alt="Select a Reed!" src="https://github.com/user-attachments/assets/4da44291-4dd8-49a1-80d2-26c40b3eba16">
+</h1>
+
+#### Record it!
+
+<h1 align="center">
+<img width="700" alt="Record it!" src="https://github.com/user-attachments/assets/530981e9-3afe-43ae-8883-05db63b9fdbe">
+</h1>
 
 ## Compile app
 
