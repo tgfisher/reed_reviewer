@@ -288,7 +288,10 @@ class ReedRecorder:
         waits a moment and records
         """
         time.sleep(self.rec_wait)  # prevent keyclicks from registering
-        raw_data = sd.rec(int(duration * self.Fs), samplerate=self.Fs, channels=2)
+        try:
+            raw_data = sd.rec(int(duration * self.Fs), samplerate=self.Fs, channels=2)
+        except sd.PortAudioError:
+            raw_data = sd.rec(int(duration * self.Fs), samplerate=self.Fs, channels=1)
         return raw_data
         # save_squeak(self.reed_id, self.Fs, self.save_time, self.raw_data)
 
@@ -327,16 +330,16 @@ class ReedRecorder:
         """
 
         print("computing fft")
-        Ns = signal.shape[0]  # sample number
-        fft_raw_data = np.empty([Ns, 2], dtype=complex)  # holds fft later
-        self.freq_mag = np.zeros([Ns, 2])
-        for idx in range(2):  # fft on each channel
+        n_samples, n_channels = signal.shape
+        fft_raw_data = np.empty([n_samples, n_channels], dtype=complex)  # holds fft later
+        self.freq_mag = np.zeros([n_samples, n_channels])
+        for idx in range(n_channels):  # fft on each channel
             fft_raw_data[:, idx] = np.fft.fft(self.raw_data[:, idx])
             self.freq_mag[:, idx] = np.fft.fftshift(np.abs(fft_raw_data[:, idx])) / (
-                Ns / self.Fs
+                n_samples / self.Fs
             )  # Ns * Fs corrects for time so this is a density
         self.freq_axis = np.fft.fftshift(
-            np.fft.fftfreq(Ns, 1 / self.Fs)
+            np.fft.fftfreq(n_samples, 1 / self.Fs)
         )  # freq axis shared
 
     def _set_initial_thresh(self):
