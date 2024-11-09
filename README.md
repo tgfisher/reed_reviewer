@@ -63,6 +63,7 @@ environment:
 **On Mac (Only):**
 
 ```bash
+(reed_reviewer)$ pip install ".[dev]" # add dev tools to virtual env
 (reed_reviewer)$ pyinstaller MacOsReedTracker.spec 
 ```
 
