@@ -50,12 +50,6 @@ environment:
 (reed_reviewer)$ pyinstaller MacOsReedTracker.spec 
 ```
 
-**On windows: (not tested)**
-
-```
-> python windows_auto_installer.py
-```
-
 ### After Successful Compile
 
 The executables should be in a directory called `dist`. It will be called `Reed Tester.exe`
