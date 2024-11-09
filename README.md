@@ -39,26 +39,15 @@ From inside the package directory and activated environment:
 
 ## Compile app
 
-I am using a tool called PyInstaller. It has worked really well for MacOS.
-
-Early in development I was compiling using a .spec file. Using the .spec file
-is powerful because it gives the user a lot of control. However, using the spec
-file requires a pre-compile. 
-
-Because this app is simple I can achieve everything with an easy to read python
-script. Running PyInstaller from python code, as I do now, is powerful because
-it is easily extended across platforms and is a one line installer. It's so
-easy.
-
-I wrote one of these 'auto installers' for windows and MacOS.
+I am using a tool called PyInstaller.
 
 Run the auto installer from inside the package directory in your activated
 environment:
 
-**On Mac:**
+**On Mac (Only):**
 
 ```bash
-(reed_reviewer)$ python mac_auto_installer.py
+(reed_reviewer)$ pyinstaller MacOsReedTracker.spec 
 ```
 
 **On windows: (not tested)**
