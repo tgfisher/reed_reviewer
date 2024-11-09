@@ -1,0 +1,20 @@
+[project]
+name = "reed_reviewer"
+description = "Track of sonic development of oboe reeds."
+version = "0.2.3"
+requires-python=">=3.10"
+dependencies = [
+    "kivy",
+    "Kivy-Garden==0.1.4",
+    "kivy_garden.matplotlib",
+    "sounddevice",
+    "matplotlib",
+    "scikit-learn",
+    "numpy",
+]
+
+[tool.setuptools]
+packages = ["reed_reviewer", "src_kivy_app"]
+
+[project.optional-dependencies]
+dev = ["pyinstaller", "nose"]

@@ -39,11 +39,11 @@ from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
-from kivy.garden.matplotlib.backend_kivyagg import FigureCanvas, NavigationToolbar2Kivy
+from kivy_garden.matplotlib.backend_kivyagg import FigureCanvas, NavigationToolbar2Kivy
 
 import matplotlib
 
-matplotlib.use("module://kivy.garden.matplotlib.backend_kivy")
+matplotlib.use("module://kivy_garden.matplotlib.backend_kivy")
 
 import matplotlib.pyplot as plt
 

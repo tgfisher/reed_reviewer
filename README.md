@@ -1,5 +1,5 @@
 # reed_reviewer_app (v0.2.3)
-Oboe reed development tool. Records and provides feedback on the frequency power
+Oboe reed development tracker. Records and stores the power spectrum
 of reeds as they are made. 
 
 Under development with B. T. Fisher (oboe).
@@ -10,32 +10,17 @@ python/kivy/matplotlib/pyinstaller/portaudio issues while developing this tool.*
 
 ## Requirements
 
-python 3.6
+Tested on MacBook with python 3.10 and 3.11.
 
-## Python Setup 
+## Setup and Use
 
-### Get Python with --enable-shared
-
-This is required for pyinstaller to properly compile the application. I recommend
-using pyenv and pyenv virtualenv to manage python versions and virtual environments.
-
-```bash
-$ env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.6-dev
-```
-
-To check on whether your python has 'shared' enabled you can run the following from within
-python:
-
-```python
->>> import sysconfig
->>> sysconfig.get_config_vars('Py_ENABLE_SHARED')
-```
 
 ### Make and Activate a virtual environment
 
 ```bash
-$ pyenv virtualenv 3.6.6 reed_reviewer
-$ pyenv activate reed_reviewer
+$ python3.xx -m venv .venv --prompt="reed_reviewer"
+$ ./.venv/bin/activate
+(reed_reviewer)$
 ```
 
 ### Package setup: pip install the package
@@ -46,13 +31,10 @@ From inside the package directory and activated environment:
 (reed_reviewer)$ pip install .
 ```
 
-### kivy.garden module problem
+### Usage
 
-Once `pip install .` has finished there is one last step to get kivy.garden and 
-PyInstaller to work together. From within the package directory and activated environment:
-
-```bash
-$ garden install matplotlib --kivy
+```python
+(reed_reviewer)$ pythone entry_point.py
 ```
 
 ## Compile app

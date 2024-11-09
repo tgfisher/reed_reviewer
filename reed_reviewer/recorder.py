@@ -4,7 +4,7 @@ import numpy as np
 import sounddevice as sd
 import matplotlib.pyplot as plt
 import reed_reviewer.reed_utils as rutils
-from scipy.integrate import simps
+from scipy.integrate import simpson
 
 CLOCK_PRECISION = time.clock_getres(0)
 HOME = os.path.expanduser("~")
@@ -316,7 +316,7 @@ class ReedRecorder:
         """
         Ns = signal.shape[0]
         abs_signal_squared = np.abs(signal) ** 2
-        signal_integral = simps(abs_signal_squared, dx=1 / self.Fs)
+        signal_integral = simpson(abs_signal_squared, dx=1 / self.Fs)
         signal_duration = Ns / self.Fs
 
         return signal_integral / signal_duration
