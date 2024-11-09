@@ -10,7 +10,7 @@ python/kivy/matplotlib/pyinstaller/portaudio issues while developing this tool.*
 
 ## Requirements
 
-Tested on MacBook with python 3.10 and 3.11.
+Tested on MacBook (M1) with python 3.10 and 3.11.
 
 ## Setup and Use
 
@@ -19,7 +19,7 @@ Tested on MacBook with python 3.10 and 3.11.
 
 ```bash
 $ python3.xx -m venv .venv --prompt="reed_reviewer"
-$ ./.venv/bin/activate
+$ source ./.venv/bin/activate
 (reed_reviewer)$
 ```
 
@@ -34,7 +34,7 @@ From inside the package directory and activated environment:
 ### Usage
 
 ```python
-(reed_reviewer)$ pythone entry_point.py
+(reed_reviewer)$ python entry_point.py
 ```
 
 ## Compile app
@@ -52,6 +52,6 @@ environment:
 
 ### After Successful Compile
 
-The executables should be in a directory called `dist`. It will be called `Reed Tester.exe`
+The executables should be in a directory called `dist`. It will be called `Reed Tracker`
 
 # Enjoy!
